@@ -4,16 +4,20 @@
 @import 'slider';
 * {
 	box-sizing: border-box;
+	font-weight: normal;
+	font-size: 16px;
+	color: #fff;
+	font-weight: normal;
 }
 html {
 	height: 100%;
-	font-size: 16px;
-	color: #fff;
 	background-color: grey;
 }
 body {
 	min-height: 100%;
-	font-family: 'Aleo' sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	font-weight: normal;
 }
 h2 {
 	text-align: center;
@@ -21,7 +25,6 @@ h2 {
 	padding: 0;
 }
 .container {
-	// min-width: 1140px;
 	margin: 0 auto;
 	width: 100%;
 	background-color: #fff;
@@ -36,41 +39,91 @@ h2 {
 	min-height: 100vh;
 	position: relative;
 	h1 {
-		padding: 130px 0 0;
+		padding: 180px 0 0;
 		text-transform: uppercase;
 		margin: 0;
+		font-size: 3rem;
+		font-weight: bold;
+		letter-spacing: 10px;
+		@media screen and (max-width: 980px) {
+			padding-top: 60px;
+		}
+		@media screen and (max-width: 430px) {
+			font-size: 1.5rem;
+		}
 	}
 	h3 {
 		padding: 0;
 		margin: 0 0 45px;
+		font-size: 1.4rem;
+		text-transform: capitalize;
+		word-spacing: 6px;
+		letter-spacing: 8px;
+		@media screen and (max-width: 430px) {
+			font-size: 0.8rem;
+		}
 	}
 	&__form {
 		display: flex;
 		justify-content: space-between;
 		border: 2px solid #fff;
-		width: 50%;
+		min-width: 50%;
 		margin: 0 auto;
 		background-color: #fff;
 		font-size: 16px;
 		line-height: 0;
+		@media screen and (max-width: 770px) {
+			min-width: 70%;
+		}
+		@media screen and (max-width: 540px) {
+			min-width: 85%;
+		}
 	}
 	&__input {
 		width: 75%;
 		padding: 0;
 		border: none;
-		padding: 25px;
+		padding: 20px;
+		font-size: .9rem;
+		outline: none;
+		padding: 10px;
 	}
 	&__button {
-		width: 24%;
-		padding: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 25%;
+		padding: 15px 25px;
 		border: none;
 		background-color: #5474fd;
+		text-transform: uppercase;
+		font-family: "Aleo";
+		font-size: .9rem;
+		overflow: hidden;
+		margin: 0;
+		text-align: center;
+		@media screen and (max-width: 460px) {
+			font-size: 0.7rem;
+			padding: 5px 15px;
+		}
+		svg {
+			margin-left: 5px;
+			@media screen and (max-width: 1000px) {
+				display: none;
+			}
+		}
+		@include hover {
+			background-color: rgba(0, 0, 0, .5);
+			color: #fff;
+			border: 2px solid #2e3974;
+			fill: rgb(0, 0, 0);
+		}
 	}
 	&__nav {
 		display: flex;
-		justify-content: space-between; // align-items: flex-end;
+		justify-content: space-between;
 		width: 100%;
-		background-color: #5474fd; // padding: 0 10%;
+		background-color: #5474fd;
 		position: absolute;
 		bottom: 0;
 	}
@@ -83,26 +136,42 @@ h2 {
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		align-items: center;
+		@media screen and (max-width: 960px) {
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
 	}
 	&__span {
 		display: flex;
 		align-self: center;
-		font-size: 24px;
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		@media screen and (max-width: 960px) {
+			display: none;
+		}
 	}
 	&__item {
 		margin: 30px;
 		list-style: none;
 		font-size: 14px;
 		text-transform: uppercase;
+		text-align: center;
+		@media screen and (max-width: 960px) {
+			margin: 15px;
+		}
 		a {
+			font-family: "Aleo";
 			text-decoration: none;
 			color: #fff;
+			@media screen and (max-width: 560px) {
+				font-size: 10px;
+			}
 		}
 	}
 	&__link {
 		@include hover {
-			color: rgb(0, 0, 0, );
-			opacity: .9;
+			color: rgba(0, 0, 0, .5);
 		}
 	}
 	&__scroll {
@@ -110,15 +179,14 @@ h2 {
 		flex-direction: column;
 		margin: 100px 0 0;
 		font-size: 14px;
-		@include hover {
-			color: rgb(0, 0, 0, );
-		}
 		a {
 			margin: 0 auto;
+			padding-top: 10px;
 			color: #fff;
 			font-size: 15px;
+			fill: #fff;
 			@include hover {
-				color: rgb(0, 0, 0, );
+				fill: rgba(0, 0, 0, .9);
 			}
 		}
 	}
@@ -129,6 +197,10 @@ h2 {
 	justify-content: space-between;
 	span {
 		font-size: 24px;
+		text-align: center;
+		@media screen and (max-width: 685px) {
+			font-size: 16px;
+		}
 	}
 	a {
 		color: #4f6ade;
@@ -139,24 +211,41 @@ h2 {
 		flex-direction: column;
 		align-items: center;
 		padding: 50px;
+		font-family: "Aleo";
+		font-size: 2.1rem;
+		text-transform: capitalize;
+		@media screen and (max-width: 540px) {
+			padding: 15px;
+		}
 	}
 }
 .section-us {
 	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/bg-section.png);
 	background-position: center;
 	background-repeat: no-repeat;
-	display: flex; // padding: 0 10%;
+	display: flex;
 	min-height: 685px;
 	opacity: 0.9;
 	background-color: red;
+	@media screen and (max-width: 780px) {
+		flex-direction: column;
+		min-height: 100%;
+	}
 }
 .section-left {
 	display: flex;
 	flex-direction: column;
 	align-self: center;
 	width: 50%;
+	padding: 5px;
+	@media screen and (max-width: 780px) {
+		width: 100%;
+		align-items: center;
+		padding: 25px;
+	}
 	h2 {
-		font-size: 36px;
+		font-family: "Aleo";
+		font-size: 2.1rem;
 	}
 	p {
 		font-size: 16px;
@@ -167,16 +256,20 @@ h2 {
 	max-width: 50%;
 	.img {
 		position: absolute;
-		max-width: 360px;
+		max-width: 300px;
+		padding: 5px;
 		height: auto;
 		overflow: hidden;
+		@media screen and (max-width: 780px) {
+			display: none;
+		}
 	}
 	.left {
 		top: 115px;
 		left: 50px;
 	}
 	.right {
-		top: 340px;
+		top: 300px;
 		left: 200px;
 		@media screen and (max-width: 1160px) {
 			left: 100px;
@@ -198,6 +291,7 @@ h2 {
 	text-transform: uppercase;
 	color: #fff;
 	margin-top: 50px;
+	font-family: "Aleo";
 	@include hover {
 		background-color: #fff;
 		color: #5474fd;
@@ -213,11 +307,19 @@ h2 {
 	background-position: center;
 	background-repeat: no-repeat;
 	padding: 100px;
+	@media screen and (max-width: 565px) {
+		justify-content: center;
+	}
 	&__first {
-		max-width: 540px;
+		display: flex;
+		flex-direction: column;
+		max-width: 440px;
 		background-color: rgb(0, 0, 0, );
 		opacity: .9;
 		padding: 20px;
+		@media screen and (max-width: 660px) {
+			align-items: center;
+		}
 		span {
 			font-size: 15px;
 		}
@@ -231,28 +333,52 @@ h2 {
 }
 .second {
 	background-image: url(../img/rest2.png);
+	background-position: center;
+	background-repeat: no-repeat;
 	justify-content: flex-end;
+	@media screen and (max-width: 565px) {
+		justify-content: center;
+	}
 }
 .turist {
 	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/bg-section.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	padding-bottom: 100px;
-	img {
-		min-width: 450px;
+	@media screen and (max-width: 860px) {
+		padding-bottom: 20px;
+	}
+	&__img {
+		min-width: 250px;
 		height: auto;
 		overflow: hidden;
+		@media screen and (max-width: 565px) {
+			max-width: 70%;
+		}
 	}
 	h2 {
-		font-size: 36px;
+		font-size: 2.1rem;
+		font-family: "Aleo";
 		padding: 54px;
+		@media screen and (max-width: 950px) {
+			padding: 20px;
+		}
+		@media screen and (max-width: 420px) {
+			padding: 5px;
+		}
 	}
 	&__wrap {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@media screen and (max-width: 940px) {
+			flex-direction: column;
+		}
 		blockquote {
-			font-size: 16px;
+			&::before {
+				content: '"';
+				color: blue;
+			}
 		}
 		h3 {
 			font-size: 20px;
@@ -276,9 +402,11 @@ h2 {
 			font-size: 15px;
 			margin: 15px;
 			a {
-				color: #fff;
-				@include hover {
-					color: #5474fd;
+				i {
+					color: #fff;
+					@include hover {
+						color: #5474fd;
+					}
 				}
 			}
 		}
@@ -293,5 +421,24 @@ h2 {
 		padding-top: 100px;
 		font-size: 24px;
 		text-transform: uppercase;
+		@media screen and (max-width: 940px) {
+			padding-top: 30px;
+		}
+	}
+}
+.arc {
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, -30%);
+		z-index: 0;
+		background-image: url(../img/svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
 	}
 }
